@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Fix</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    
+    <!-- Authentication -->
+    <string name="welcome_title">Welcome to Fix</string>
+    <string name="welcome_description">Your one-stop solution for all home services</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="have_account">Already have an account? Sign In</string>
+    <string name="no_account">Don\'t have an account? Sign Up</string>
+    <string name="back_to_sign_in">Back to Sign In</string>
+    <string name="reset_password_description">Enter your email address and we\'ll send you a link to reset your password.</string>
+    
+    <!-- Service Categories -->
+    <string name="category_plumbing">Plumbing</string>
+    <string name="category_electrical">Electrical</string>
+    <string name="category_cleaning">Cleaning</string>
+    <string name="category_painting">Painting</string>
+    
+    <!-- Payment Integration -->
+    <string name="payment_mpesa">Pay with M-Pesa</string>
+    <string name="payment_processing">Processing payment…</string>
+    <string name="payment_success">Payment successful</string>
+    <string name="payment_failed">Payment failed</string>
+    
+    <!-- Booking Status -->
+    <string name="booking_pending">Pending</string>
+    <string name="booking_confirmed">Confirmed</string>
+    <string name="booking_in_progress">In Progress</string>
+    <string name="booking_completed">Completed</string>
+    <string name="booking_cancelled">Cancelled</string>
+</resources>
