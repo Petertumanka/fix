@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // Setup RecyclerViews
-        RecyclerView servicesRecyclerView = findViewById(R.id.servicesRecyclerView);
-        RecyclerView bookingsRecyclerView = findViewById(R.id.bookingsRecyclerView);
-
-        servicesRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        bookingsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Set initial fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .commit();
+        }
 
         // Update UI with user info
         updateUserInterface();
@@ -72,9 +72,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_logout) {
+        if (id == R.id.nav_home) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .commit();
+        } else if (id == R.id.nav_services) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ServicesFragment())
+                    .commit();
+        } else if (id == R.id.nav_bookings) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new BookingsFragment())
+                    .commit();
+        } else if (id == R.id.nav_profile) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ProfileFragment())
+                    .commit();
+        } else if (id == R.id.nav_settings) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new SettingsFragment())
+                    .commit();
+        } else if (id == R.id.nav_help) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HelpFragment())
+                    .commit();
+        } else if (id == R.id.nav_logout) {
             mAuth.signOut();
-            // Navigate to login activity
+            // Navigate to welcome activity
+            android.content.Intent intent = new android.content.Intent(this, WelcomeActivity.class);
+            intent.setFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK | android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }
 

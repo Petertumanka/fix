@@ -1,6 +1,7 @@
 package com.example.fix;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
@@ -23,8 +24,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         emailLayout = findViewById(R.id.emailLayout);
         emailInput = findViewById(R.id.emailInput);
         MaterialButton resetButton = findViewById(R.id.resetButton);
+        TextView backToSignInText = findViewById(R.id.backToSignInText);
 
         resetButton.setOnClickListener(v -> resetPassword());
+        backToSignInText.setOnClickListener(v -> finish());
     }
 
     private void resetPassword() {

@@ -2,6 +2,7 @@ package com.example.fix;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
@@ -32,8 +33,14 @@ public class SignUpActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
         confirmPasswordInput = findViewById(R.id.confirmPasswordInput);
         MaterialButton signUpButton = findViewById(R.id.signUpButton);
+        TextView haveAccountText = findViewById(R.id.haveAccountText);
 
         signUpButton.setOnClickListener(v -> signUp());
+        haveAccountText.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void signUp() {
